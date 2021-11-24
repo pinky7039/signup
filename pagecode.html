@@ -1,0 +1,55 @@
+<html>
+    <style>
+
+        body {font-family: Arial, Helvetica, sans-serif;margin: 0;padding : 0;display: grid;place-content : center;min-height: 0px;background:rgb(72, 151, 204)
+            }
+
+        #form {display: grid;background-color: rgb(238, 234, 229);height: 60vh;width: 70vh; place-items: center;}
+        
+        *{box-sizing: border-box;}
+        
+        input[type=text],input[type=password]{width: 100%;padding:15px;margin: 5px 0 22px 0;display:inline-block;border:none;background: rgb(218, 210, 210);}
+
+        input[type=text]:focus,input[type=password]:focus{background-color: rgb(192, 183, 183);}
+
+        input[type=submit]{background-color: #1a866b;color: white;padding: 14px 20px; margin: 8px 0;border: none;cursor: pointer;width: 100%;opacity: 0.9;}
+ 
+        input[type=submit]:hover{opacity: 1;
+        color: rgb(59, 35, 35); }
+        @media screen and (max-width: 300px) {.sibmit {width: 100%;}
+        #form{left : 10%;top: 50%;position: absolute;transform:translate(-50%, -50%);}
+        }
+    </style>
+    <head>
+        <meta name="viewport" content="width=device-width, intial-scale=1.0"></meta>
+        <title>SIGH UP</title>
+    </head>
+    <body onload='document.myForm.pass.focus()' >
+         
+        <form style="border: 1px solid #ccc;" id="form" method="post" onsubmit="return valipassForm()" name="myForm">
+            <h1>SIGN UP </h1>
+            <label>USERNAME:</label> <input type="text"  name=names > 
+
+            <label>PASSWORD:</label> <input type="password" name=pass > 
+            <input type="submit" value="SUBMIT" class="submit" onclick="CheckPassword(document.myForm.pass)">
+        </form>
+        <p>Developed by <a href="#" target="_blank">PINKY</a></p>
+     
+    </body>
+    
+
+<script>function CheckPassword(inputtxt) { 
+    var paswd=  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
+    if(inputtxt.value.match(paswd)) 
+    { 
+    alert('Correct')
+    return true;
+    }
+    else
+    { 
+    alert('Wrong...!')
+    
+    }
+    }</script>
+
+</html>
