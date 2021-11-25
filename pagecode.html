@@ -28,9 +28,13 @@
          
         <form style="border: 1px solid #ccc;" id="form" method="post" onsubmit="return valipassForm()" name="myForm">
             <h1>SIGN UP </h1>
-            <label>USERNAME:</label> <input type="text"  name=names > 
+            <label>USERNAME:</label> <input type="text"  name=names required> 
 
             <label>PASSWORD:</label> <input type="password" name=pass > 
+            <small>At least 8 characters—the more characters, the better.
+                A mixture of both uppercase and lowercase letters.
+                A mixture of letters and numbers.
+                Inclusion of at least one special character, e.g., ! @ # ? ]</small>
             <input type="submit" value="SUBMIT" class="submit" onclick="CheckPassword(document.myForm.pass)">
         </form>
         <p>Developed by <a href="#" target="_blank">PINKY</a></p>
@@ -40,16 +44,11 @@
 
 <script>function CheckPassword(inputtxt) { 
     var paswd=  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
-    if(inputtxt.value.match(paswd)) 
+    if(!inputtxt.value.match(paswd)) 
     { 
-    alert('Correct')
+    alert('PASSWORD MUST BE 8 CHARCTERS')
     return true;
-    }
-    else
-    { 
-    alert('Wrong...!')
-    
-    }
-    }</script>
+    }}
+</script>
 
 </html>
